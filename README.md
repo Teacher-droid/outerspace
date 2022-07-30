@@ -27,7 +27,7 @@ Here to you a space oriented hackaton
 # Process by following ⚙️
 
 
-`Download` the folder & open the index.html file in Web browser (I suggest Brave or Google Chrome).
+`Download` the folder & open the index.html file in Web browser (I suggest Brave or Google Chrome).<br>
 Here we go, get your saucer and let's meet to the moon.
 
 <hr>
