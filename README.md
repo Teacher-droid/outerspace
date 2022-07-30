@@ -45,10 +45,10 @@ https://teacher-droid.github.io/outerspace/
 
 # Features 🧪
 
--Dark/Light mode
--Wrapped sidebar
--Menu burger
--Clickable links
+-Dark/Light mode<br>
+-Wrapped sidebar<br>
+-Menu burger<br>
+-Clickable links<br>
 
 <hr>
 <hr>
