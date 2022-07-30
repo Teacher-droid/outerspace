@@ -1,0 +1,1446 @@
+/* Google Font Import - Poppins */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+
+
+}
+
+/* =====  ===== */
+
+
+
+/* ===== Instantiating variables ===== */
+
+:root {
+  /* ===== Colors ===== */
+  --body-color: #E4E9F7;
+  --bg-color: #1d2a2f;
+  --radiant-color: #2C4550;
+  --sidebar-color: #FFF;
+  --primary-color: #695CFE;
+  --primary-color-light: #F6F5FF;
+  --toggle-color: #DDD;
+  --text-color: #707070;
+
+/* =====  ===== */
+
+
+  /* ====== Transition ====== */
+  --tran-03: all 0.2s ease;
+  --tran-03: all 0.3s ease;
+  --tran-04: all 0.3s ease;
+  --tran-05: all 0.3s ease;
+}
+
+/* =====  ===== */
+
+
+body {
+  min-height: 100vh;
+  background-color: var(--body-color);
+  transition: var(--tran-05);
+
+}
+
+::selection {
+  background-color: var(--primary-color);
+  color: #fff;
+}
+
+
+
+body.dark {
+  --body-color: #22333a;
+  --sidebar-color: #22333a;
+  --primary-color: white;
+  --primary-color-light: #22333a;
+  --toggle-color: #fff;
+  --text-color: #ccc;
+}
+
+/* =====  ===== */
+/* =====  ===== */
+
+
+
+/* ===== Sidebar ===== */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 250px;
+  padding: 10px 14px;
+  background: var(--sidebar-color);
+  transition: var(--tran-05);
+  z-index: 100;
+}
+
+.sidebar.close {
+  width: 88px;
+}
+
+/* ===== Universal code ===== */
+.sidebar li {
+  height: 50px;
+  list-style: none;
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+}
+
+.sidebar header .image,
+.sidebar .icon {
+  min-width: 60px;
+  border-radius: 6px;
+}
+
+.sidebar .icon {
+  min-width: 60px;
+  border-radius: 6px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 20px;
+}
+
+.sidebar .text,
+.sidebar .icon {
+  color: var(--text-color);
+  transition: var(--tran-03);
+}
+
+.sidebar .text {
+  font-size: 17px;
+  font-weight: 500;
+  white-space: nowrap;
+  opacity: 1;
+}
+
+.sidebar.close .text {
+  opacity: 0;
+}
+
+/* =========================== */
+
+.sidebar header {
+  position: relative;
+}
+
+.sidebar header .image-text {
+  display: flex;
+  align-items: center;
+}
+
+.sidebar header .logo-text {
+  display: flex;
+  flex-direction: column;
+}
+
+header .image-text .name {
+  margin-top: 2px;
+  font-size: 40px;
+  font-weight: 600;
+}
+
+header .image-text .profession {
+  font-size: 16px;
+  margin-top: -2px;
+  display: block;
+}
+
+.sidebar header .image {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar header .image img {
+  width: 40px;
+  border-radius: 6px;
+}
+
+/* ===== Sidebar toggler ===== */
+.sidebar header .toggle {
+  position: absolute;
+  top: 50%;
+  right: -25px;
+  transform: translateY(-50%) rotate(180deg);
+  height: 25px;
+  width: 25px;
+  background-color: var(--primary-color);
+  color: var(--sidebar-color);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 22px;
+  cursor: pointer;
+  transition: var(--tran-05);
+}
+
+body.dark .sidebar header .toggle {
+  color: var(--text-color);
+}
+
+.sidebar.close .toggle {
+  transform: translateY(-50%) rotate(0deg);
+}
+
+.sidebar .menu {
+  margin-top: 40px;
+}
+
+/* =====  ===== */
+
+
+/* ===== Search box ===== */
+.sidebar li.search-box {
+  border-radius: 6px;
+  background-color: var(--primary-color-light);
+  cursor: pointer;
+  transition: var(--tran-05);
+}
+
+.sidebar li.search-box input {
+  height: 100%;
+  width: 100%;
+  outline: none;
+  border: none;
+  background-color: var(--primary-color-light);
+  color: var(--text-color);
+  border-radius: 6px;
+  font-size: 17px;
+  font-weight: 500;
+  transition: var(--tran-05);
+}
+/* =====  ===== */
+
+
+.sidebar li a {
+  list-style: none;
+  height: 100%;
+  background-color: transparent;
+  display: flex;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: var(--tran-03);
+}
+
+.sidebar li a:hover {
+  background-color: var(--primary-color);
+}
+
+/* ===== Dark/Light mode ===== */
+.sidebar li a:hover .icon,
+.sidebar li a:hover .text {
+  color: var(--sidebar-color);
+}
+
+body.dark .sidebar li a:hover .icon,
+body.dark .sidebar li a:hover .text {
+  color: var(--text-color);
+}
+
+.sidebar .menu-bar {
+  height: calc(100% - 55px);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* .navbar .menu-bar2 {} */
+
+.menu-bar::-webkit-scrollbar {
+  display: none;
+}
+
+.sidebar .menu-bar .mode {
+  border-radius: 6px;
+  background-color: var(--primary-color-light);
+  position: relative;
+  transition: var(--tran-05);
+}
+
+
+
+.menu-bar .mode .sun-moon {
+  height: 50px;
+  width: 60px;
+}
+
+.menu-bar2 .mode .sun-moon {
+  height: 50px;
+  width: 60px;
+  color: var(--text-color);
+
+}
+
+.mode .sun-moon i {
+  position: absolute;
+  top: 10%;
+  right: 7%;
+}
+
+.mode .sun-moon i.sun {
+  opacity: 0;
+}
+
+body.dark .mode .sun-moon i.sun {
+  opacity: 1;
+}
+
+body.dark .mode .sun-moon i.moon {
+  opacity: 0;
+}
+/* =====  ===== */
+
+
+/* ===== Switch mode ===== */
+.menu-bar2 .bottom-content .toggle-switch {
+  height: 100%;
+  min-width: 60px;
+  display: flex;
+  vertical-align: middle;
+
+  align-items: center;
+  justify-content: center;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.toggle-switch .switch {
+  position: relative;
+  height: 22px;
+  width: 40px;
+  border-radius: 25px;
+  background-color: var(--toggle-color);
+  transition: var(--tran-05);
+}
+
+.switch::before {
+  content: '';
+  position: absolute;
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  background-color: var(--sidebar-color);
+  transition: var(--tran-04);
+}
+
+body.dark .switch::before {
+  left: 20px;
+}
+
+/* .home {
+    position: absolute;
+    top: 0;
+    top: 0;
+    left: 250px;
+    height: 100vh;
+    width: calc(100% - 250px);
+    background-color: var(--body-color);
+    transition: var(--tran-05);
+} */
+
+.home .text {
+  font-size: 30px;
+  font-weight: 500;
+  padding: 12px 60px;
+
+  color: var(--text-color);
+
+}
+
+.small {
+  padding-left: 65px;
+  color: var(--text-color);
+}
+
+.navbar-text {
+  color: var(--text-color);
+
+}
+
+.sidebar.close~.home {
+  left: 78px;
+  height: 100vh;
+  width: calc(100% - 78px);
+}
+
+body.dark .home .text {
+  color: var(--text-color);
+}
+
+body.dark .small {
+  color: var(--text-color);
+}
+
+body.dark .navbar-text {
+  color: var(--text-color);
+
+}
+
+/* =====  ===== */
+/* =====  ===== */
+
+
+
+
+/* ===== Responsive Sidebar ===== */
+
+@media (max-width: 952px) {
+  .sidebar {
+    display: none;
+  }
+
+
+}
+
+/* =====  ===== */
+/* ===== ===== */
+
+
+
+
+/* ===== Slide ===== */
+
+/* .slide {}
+ */
+
+
+
+/* ===== Components ===== */
+
+.stairs {
+  position: relative;
+  margin-left: 50vh;
+
+
+
+}
+
+
+.man {
+  position: absolute;
+
+  right: 25%;
+  top: 10%;
+  z-index: -9;
+  -webkit-animation: float 3s ease-in-out infinite;
+  animation: float 3s ease-in-out infinite;
+}
+
+
+
+.adventure {
+  position: absolute;
+  margin-left: 35vh;
+  margin-top: 15vh
+}
+
+.align {
+  font-size: 60px;
+
+}
+
+.top {
+  font-size: 13px;
+
+}
+
+.apollo {
+  padding-left: 50vh;
+}
+
+.vector {
+  padding-top: 200px;
+}
+
+/* =====  ===== */
+/* =====  ===== */
+
+
+/* ===== Navbar ===== */
+
+
+nav {
+  background: var(--sidebar-color);
+  height: 80px;
+  width: 100%;
+}
+
+label.logo {
+  color: white;
+  font-size: 35px;
+  line-height: 80px;
+  padding: 0 100px;
+  font-weight: bold;
+}
+
+nav ul {
+  float: right;
+  margin-right: 20px;
+}
+
+nav ul li {
+  display: inline-block;
+  line-height: 80px;
+  margin: 0 5px;
+}
+
+nav ul li a {
+  color: white;
+  font-size: 17px;
+  padding: 7px 13px;
+  border-radius: 3px;
+  text-transform: uppercase;
+}
+
+a.active,
+a:hover {
+  transition: .5s;
+}
+
+
+.list .list-link {
+  position: relative;
+  color: var(--text-color);
+  text-decoration: none;
+  font-size: 1.3rem;
+}
+
+.list .list-link::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0%;
+  height: 1px;
+  background: var(--text-color);
+  transition: 0.4s ease-out;
+}
+
+.list .list-link:hover::after {
+  left: 0;
+  width: 100%;
+}
+
+
+.checkbtn {
+  font-size: 30px;
+  color: var(--text-color);
+
+  float: right;
+  line-height: 80px;
+  margin-right: 40px;
+  cursor: pointer;
+  display: none;
+}
+
+#check {
+  display: none;
+}
+
+/* =====  ===== */
+/* =====  ===== */
+
+
+/* ===== Responsive Navbar ===== */
+
+@media (max-width: 952px) {
+  label.logo {
+    font-size: 30px;
+    padding-left: 50px;
+  }
+
+  nav ul li a {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 858px) {
+  .checkbtn {
+    display: block;
+    
+  }
+
+  ul {
+    position: fixed;
+    width: 100%;
+    height: 100vh;
+    background: var(--sidebar-color);
+    top: 80px;
+    left: -100%;
+    text-align: center;
+    transition: all .5s;
+  }
+
+  nav ul li {
+    display: block;
+    margin: 50px 0;
+    line-height: 30px;
+  }
+
+  nav ul li a {
+    font-size: 20px;
+  }
+
+  a:hover,
+  a.active {
+    background: none;
+    color: #5f0f82;
+  }
+
+  #check:checked~ul {
+    left: 0;
+  }
+}
+
+section {
+  background: url() no-repeat;
+  background-size: cover;
+  height: calc(100vh - 80px);
+}
+
+
+/* =====  ===== */
+/* =====  ===== */
+
+
+
+/* ===== Responsive behaviour ===== */
+
+
+/* ===== Adventurer text ===== */
+@media (max-width: 952px) {
+  .adventure {
+    top: 50%;
+    right: 29%;
+
+  }
+
+
+}
+
+/* =====  ===== */
+
+
+/* ===== Man ===== */
+@media (max-width: 952px) {
+  .man {
+    left: 17%;
+
+  }
+
+
+}
+
+/* =====  ===== */
+
+
+
+/* ===== Stairs ===== */
+@media (max-width: 952px) {
+  .stairs {
+    right: 70%;
+    opacity: 75%;
+
+  }
+
+
+}
+
+
+/* =====  ===== */
+
+
+
+/* ===== Apollo ===== */
+@media (max-width: 952px) {
+  .apollo {
+    top: 20%;
+    padding-left: 0vh;
+
+
+  }
+
+  .home.text {
+
+    padding-left: 3vh;
+
+
+  }
+
+  .small {
+
+    padding-left: 3vh;
+  }
+
+}
+
+
+/* ===== Vector ===== */
+@media (max-width: 952px) {
+  .vector {
+    margin-top: 1vh;
+    margin-left: -7vh;
+
+  }
+
+
+}
+
+/* ===== Footprint side ===== */
+@media (max-width: 952px) {
+  .none {
+    display: none;
+
+  }
+
+
+}
+
+
+/* =====  ===== */
+
+/* =====  ===== */
+
+
+
+/* ===== Footer ===== */
+@media (max-width: 952px) {
+  footer {
+    margin-top: 200px;
+  }
+
+
+}
+
+/* =====  ===== */
+
+
+/* ===== Easter egg  ===== */
+/* @media (max-width: 952px) {
+  .easter-egg {}
+
+
+} */
+
+/* =====  ===== */
+/* =====  ===== */
+
+
+
+/* ===== Footer ===== */
+
+
+footer {
+  max-width: 100vw;
+  position: relative;
+  display: flex;
+  height: max-content;
+  margin-top: 10vw;
+  background: radial-gradient(100% 2631.09% at 0% 0%, rgba(0, 0, 0, 0.309) 0%, rgba(0, 0, 0, 0.292) 100%);
+  backdrop-filter: blur(50px);
+
+}
+
+
+
+/* =====  ===== */
+/* =====  ===== */
+
+
+
+
+
+/* ===== Floating animation ===== */
+
+
+
+@-webkit-keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+
+  50% {
+    transform: translatey(-90px);
+  }
+
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+@keyframes float {
+  0% {
+    transform: translatey(0px);
+  }
+
+  50% {
+    transform: translatey(-90px);
+  }
+
+  100% {
+    transform: translatey(0px);
+  }
+}
+
+
+/* ===== Falling stars animation ===== */
+  
+  .fall {
+  
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: url(img/bg2.jpg);
+    background-position-x: center;
+    background-size: cover;
+    animation: animateBg 5s linear infinite;
+  
+  
+  
+  }
+  
+  .star{
+    position: absolute;
+    width: 4px;
+    height: 4px;
+    top: 50%;
+    left: 50%;
+    background: #ffff;
+    border-radius: 50%;
+    box-shadow: 0 0 0 4px rgba(255, 255, 255, 0.1),
+    0 0 0 8px rgba(255, 255, 255, 0.1),
+    0 0 20px rgba(255, 255, 255, 1) ;
+  animation: animate 3s linear infinite;
+  }
+  
+  .star::before {
+    content: '';
+    position: absolute;
+    width: 300px;
+    height: 1px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: linear-gradient(90deg, #ffff, transparent);
+  
+  }
+
+  @keyframes animate 
+  {
+    0%
+    {
+      transform: rotate(315deg) translateX(0);
+      opacity: 1;
+
+    }
+    70%
+    {
+      opacity: 1;
+    }
+    100%
+    {
+      transform: rotate(315deg) translateX(-1000px);
+      opacity: 0;
+
+    }
+  }
+
+  .star:nth-child(1)
+  {
+    top: 0;
+    right: 0;
+    left: initial;
+    animation-delay: 0;
+    animation-duration: 1s;
+  }
+
+  .star:nth-child(2)
+  {
+    top: 0;
+    right: 80px;
+    left: initial;
+    animation-delay: 0.2s;
+    animation-duration: 3s;
+  }
+
+  .star:nth-child(3)
+  {
+    top: 80px;
+    right: 0px;
+    left: initial;
+    animation-delay: 0.4s;
+    animation-duration: 2s;
+  }
+
+  .star:nth-child(4)
+  {
+    top: 0px;
+    right: 180px;
+    left: initial;
+    animation-delay: 0.6s;
+    animation-duration: 1.5s;
+  }
+
+  .star:nth-child(5)
+  {
+    top: 0px;
+    right: 400px;
+    left: initial;
+    animation-delay: 0.8s;
+    animation-duration: 2.5s;
+  }
+
+  .star:nth-child(6)
+  {
+    top: 0px;
+    right: 600px;
+    left: initial;
+    animation-delay: 1s;
+    animation-duration: 3s;
+  }
+
+  .star:nth-child(7)
+  {
+    top: 30px;
+    right: 0px;
+    left: initial;
+    animation-delay: 1.2s;
+    animation-duration: 1.75s;
+  }
+
+  .star:nth-child(8)
+  {
+    top: 0px;
+    right: 700px;
+    left: initial;
+    animation-delay: 1.4s;
+    animation-duration: 1.25s;
+  }
+
+  .star:nth-child(9)
+  {
+    top: 0px;
+    right: 1000px;
+    left: initial;
+    animation-delay: 0.75s;
+    animation-duration: 2.25s;
+  }
+
+  .star:nth-child(10)
+  {
+    top: 0px;
+    right: 450px;
+    left: initial;
+    animation-delay: 2.75s;
+    animation-duration: 2.25s;
+  }
+
+/* =====  ===== */
+/* =====  ===== */
+
+
+
+
+/* ===== Astronaut animation ===== */
+
+
+.backg {
+  position: relative;
+  height: 500px;
+  width: 500px;
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.1);
+  transform: scale(0.7);
+}
+
+.r1 {
+  background-color: #ffbf80;
+  height: 20px;
+  width: 110px;
+  border-radius: 10px;
+  position: relative;
+  top: 60px;
+  left: 85px;
+}
+
+.r2 {
+  background-color: #ffbf80;
+  height: 15px;
+  width: 90px;
+  border-radius: 6.5px;
+  position: relative;
+  top: 80px;
+  left: 110px;
+}
+
+.r3 {
+  background-color: #ffbf80;
+  height: 30px;
+  width: 120px;
+  border-radius: 15px;
+  position: relative;
+  top: 78px;
+  left: 50px;
+}
+
+.r4 {
+  background-color: #ffbf80;
+  height: 22px;
+  width: 90px;
+  border-radius: 11px;
+  position: relative;
+  top: 70px;
+  left: 12px;
+}
+
+.r5 {
+  background-color: rgba(204, 102, 0, 0.3);
+  height: 15px;
+  width: 40px;
+  border-radius: 7.5px;
+  position: relative;
+  bottom: 50px;
+  left: 70px;
+}
+
+.r6 {
+  background-color: rgba(204, 102, 0, 0.3);
+  height: 20px;
+  width: 60px;
+  border-radius: 11px;
+  position: relative;
+  bottom: 25px;
+  left: 10px;
+}
+
+.r7 {
+  background-color: rgba(204, 102, 0, 0.3);
+  height: 15px;
+  width: 45px;
+  border-radius: 7.5px;
+  position: relative;
+  top: 40px;
+  left: 130px;
+}
+
+.r8 {
+  background-color: rgba(255, 255, 255, 0.4);
+  height: 12px;
+  width: 30px;
+  border-radius: 7.5px;
+  position: relative;
+  top: 7px;
+  left: 32px;
+}
+
+.shad {
+  background-color: transparent;
+  box-shadow: 15px 15px rgba(204, 102, 0, 0.3);
+  position: relative;
+  height: 200px;
+  width: 200px;
+  border-radius: 50%;
+  bottom: 164px;
+  right: 16px;
+}
+
+.astro {
+  position: relative;
+  left: 131px;
+  bottom: 250px;
+  transform: rotate(-30deg);
+
+}
+
+.an {
+  animation-name: flo;
+  animation-duration: 5s;
+  animation-iteration-count: infinite;
+  position: relative;
+  bottom: 80px;
+  left: 20px;
+
+}
+
+@keyframes flo {
+  50% {
+    transform: translateY(30px);
+  }
+}
+
+.tank {
+  background-color: #a6a6a6;
+  height: 120px;
+  width: 120px;
+  border-radius: 10px;
+  position: relative;
+  left: 95px;
+  top: 50px;
+  transform: rotate(-30deg);
+}
+
+.helmet {
+  background-color: white;
+  height: 93px;
+  width: 100px;
+  border-radius: 45%;
+  position: relative;
+  left: 20px;
+  z-index: 5;
+}
+
+.glass {
+  background-color: #666666;
+  height: 60px;
+  width: 80px;
+  border-top-left-radius: 60%;
+  border-top-right-radius: 60%;
+  border-bottom-left-radius: 40%;
+  border-bottom-right-radius: 40%;
+  position: relative;
+  left: 10px;
+  top: 7px;
+}
+
+.shine {
+  background-color: rgba(166, 166, 166, 0.7);
+  height: 15px;
+  width: 15px;
+  border-radius: 50%;
+  position: relative;
+  left: 10px;
+  top: 15px;
+}
+
+.dress {
+  background-color: #f2f2f2;
+  height: 100px;
+  width: 100px;
+  border-radius: 10%;
+  position: relative;
+  bottom: 5px;
+  left: 20px;
+
+}
+
+.handr {
+  height: 26px;
+  width: 75px;
+  background-color: #f2f2f2;
+  border-radius: 40px;
+  position: relative;
+  bottom: 138px;
+  left: 95px;
+  transform: rotate(-20deg);
+}
+
+.handl {
+  height: 26px;
+  width: 75px;
+  background-color: #f2f2f2;
+  border-radius: 40px;
+  position: relative;
+  bottom: 111px;
+  right: 29px;
+  transform: rotate(20deg);
+}
+
+.handr1 {
+  height: 26px;
+  width: 57px;
+  background-color: #f2f2f2;
+  border-radius: 26px;
+  position: relative;
+  bottom: 18px;
+  left: 35px;
+  transform: rotate(90deg);
+}
+
+.handl1 {
+  height: 26px;
+  width: 57px;
+  background-color: #f2f2f2;
+  border-radius: 26px;
+  position: relative;
+  bottom: 17px;
+  right: 17px;
+  transform: rotate(-90deg);
+}
+
+.glover {
+  height: 28px;
+  width: 26px;
+  background-color: white;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  transform: rotate(-90deg);
+  position: relative;
+  bottom: 1px;
+  right: 16px;
+}
+
+.glovel {
+  height: 28px;
+  width: 26px;
+  background-color: white;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  transform: rotate(90deg);
+  position: relative;
+  bottom: 1px;
+  left: 42px;
+}
+
+.thumbr {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: white;
+  position: relative;
+  right: 7px;
+  top: 19px;
+}
+
+.thumbl {
+  height: 10px;
+  width: 10px;
+  border-radius: 50%;
+  background-color: white;
+  position: relative;
+  left: 21px;
+  top: 19px;
+}
+
+.b1 {
+  background-color: cyan;
+  width: 28px;
+  height: 5.5px;
+  border-radius: 13px;
+  position: relative;
+  top: 18px;
+  right: 1px;
+}
+
+.b2 {
+  background-color: cyan;
+  width: 28px;
+  height: 5.5px;
+  border-radius: 13px;
+  position: relative;
+  top: 18px;
+  right: 1px;
+}
+
+.c {
+  background-color: white;
+  width: 55px;
+  height: 30px;
+  border-radius: 8px;
+  position: relative;
+  top: 25px;
+  left: 23px;
+}
+
+.btn1 {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: #4775ff;
+  position: relative;
+  left: 5px;
+  top: 10px;
+}
+
+.btn2 {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: #ffd147;
+  position: relative;
+  left: 21px;
+  bottom: 2px;
+}
+
+.btn3 {
+  height: 12px;
+  width: 12px;
+  border-radius: 50%;
+  background-color: cyan;
+  position: relative;
+  bottom: 14px;
+  left: 38px;
+}
+
+.btn4 {
+  height: 20px;
+  width: 20px;
+  border-radius: 50%;
+  background-color: #a6a6a6;
+  position: relative;
+  left: 19px;
+  top: 4px;
+}
+
+.legl {
+  height: 100px;
+  width: 40px;
+  background-color: #f2f2f2;
+  position: relative;
+  bottom: 68px;
+  left: 5px;
+  transform: rotate(20deg);
+}
+
+.legr {
+  height: 100px;
+  width: 40px;
+  background-color: #f2f2f2;
+  position: relative;
+  bottom: 168px;
+  left: 96px;
+  transform: rotate(-20deg);
+}
+
+.bootl1 {
+  background-color: white;
+  width: 43px;
+  height: 35px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  position: relative;
+  top: 65px;
+  right: 1.5px;
+}
+
+.bootr1 {
+  background-color: white;
+  width: 43px;
+  height: 35px;
+  border-top-left-radius: 50%;
+  border-top-right-radius: 50%;
+  position: relative;
+  top: 65px;
+  right: 1.5px;
+}
+
+.bootl2 {
+  background-color: cyan;
+  width: 45px;
+  height: 5px;
+  border-radius: 21px;
+  position: relative;
+  top: 30px;
+  right: 1.5px;
+}
+
+.bootr2 {
+  background-color: cyan;
+  width: 45px;
+  height: 5px;
+  border-radius: 21px;
+  position: relative;
+  top: 30px;
+  right: 1.5px;
+}
+
+.pipe {
+  background-color: transparent;
+  height: 80px;
+  width: 80px;
+  border: 10px solid #4775ff;
+  border-radius: 40px 0px 0px 70px;
+  border-right: none;
+  transform: rotate(180deg);
+  position: relative;
+  bottom: 330px;
+  left: 130px;
+}
+
+.pipe2 {
+  background-color: transparent;
+  height: 90px;
+  width: 42px;
+  border: 10px solid #4775ff;
+  border-radius: 40px 0px 0px 0px;
+  border-right: none;
+  transform: rotate(90deg);
+  position: relative;
+  border-bottom: none;
+  left: 67px;
+  bottom: 34px;
+
+}
+
+.pipe3 {
+  height: 10px;
+  width: 10px;
+  background-color: #4775ff;
+  position: relative;
+  border-radius: 65%;
+  bottom: 10px;
+  left: 37px;
+}
+
+.s1,
+.s2,
+.s3,
+.s4,
+.s5,
+.s6 {
+  background-color: white;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  position: relative;
+}
+
+.s1 {
+  bottom: 150px;
+  left: 200px;
+}
+
+.s2 {
+  top: 130px;
+  left: 254px;
+}
+
+.s3 {
+  bottom: 98px;
+  left: 65px;
+}
+
+.s4 {
+  top: 216px;
+  left: 249px;
+}
+
+.s5 {
+  top: 139px;
+  left: 100px;
+}
+
+.s6 {
+  top: 60px;
+  left: 370px;
+}
+
+
+/* =====  ===== */
+/* =====  ===== */
